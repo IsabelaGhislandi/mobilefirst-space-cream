@@ -20,16 +20,19 @@
 
 body {
     font-family: var(--ff-body);
+    
    
 }
 
 .page {
     margin: 0 auto;
     background-color: var(--bg-main) ;
-  
+   
+    
 }
 
 header {
+   
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,14 +52,26 @@ header h1 {
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
     padding-block: 8px;
     width: 100%;
-    margin-bottom: 2.9rem;
+    margin: 3.2rem 0 2.9rem;
 }
+
+
 
 #logo {
     height: 14rem;
     width: 14rem;
-    margin: 3.2rem 3.2rem 11.0rem;
+    margin: 3.2rem 12.3rem;
+ 
 }
+
+header p {
+    
+    display: none;
+   
+
+
+   
+ }
 
 img {
     width: 100%;
@@ -71,21 +86,24 @@ img {
     align-items: center;
     margin: 2.4rem 3.2rem 6.0rem;
     gap: 3.2rem;
-   
+    background-color: #EFF1FF;
  }
 
- main p {
-    font-weight: var(--ff-weight);
-    text-align: center;
-    font-size: var(--fs-primary);
-    line-height: 2.5rem;
-    min-height: 7.5rem;
-    font-family: var(--ff-body);
-    margin-bottom: 3.1rem;
-    min-width: 30.5rem;
-    color: var(--fc-text) ;
-    animation: downtop 900ms;
- }
+.description-mobile {
+  font-weight: var(--ff-weight);
+  text-align: center;
+  font-size: var(--fs-primary);
+  line-height: 2.5rem;
+  min-height: 7.5rem;
+  font-family: var(--ff-body);
+ 
+  width: 100%;
+  color: var(--fc-text) ;
+  animation: downtop 900ms;
+  margin: 1.4rem 3.6rem;
+ 
+  padding: 3rem 2rem;
+}
 
  .card {
     position: relative;
@@ -132,6 +150,10 @@ img {
  
 }
 
+footer {
+    display: none;
+}
+
 @keyframes topdown {
     0% {
         opacity: 0;
@@ -156,3 +178,161 @@ img {
 }
 
 
+@media (min-width: 900px) {
+    
+    .page {
+      display: flex;
+    }
+
+    footer {
+      display: flex;
+      
+      font-family: 'Open Sans';
+      font-style: normal;
+      font-weight: var(--ff-weight);
+     
+      font-size: 1.4rem;
+      line-height: 2.8rem;
+      margin:auto;
+     }
+ 
+     footer p {
+      display: flex;
+      justify-content: center;
+     }  
+     footer a {
+      text-decoration: none;
+      color: var(--fc-text);
+     }
+
+
+    header {
+      max-width: 37.7rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      place-items: unset;
+      animation: topdown 900ms;
+      }
+
+      .description-mobile {
+        display: none;
+      }
+
+    header p {
+       display: block;
+        background: none;
+        color: white; 
+        font-size: 2.4rem;
+        line-height: 3rem;
+      margin: 3.2rem 4.8rem 13.7rem;  
+        padding-block: 0;
+        font-family: var(--ff-body);
+       justify-content: center;
+    }
+  
+      header h1 {
+        height: 7rem;
+        font-size: 4.8rem;
+        align-items: center;
+        padding-block: 20px;
+        color: var(--bg-tertiary);
+        text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+        font-weight: var(--ff-weight);
+       
+       
+      }
+
+      #logo{
+        width: 21.4rem;
+        height: 16.7rem;
+        margin: 2rem 8.1rem 3.2rem;
+        
+      }
+
+      main {
+        display: grid;
+        justify-items: start;
+          grid-template-areas: 
+          'A B'
+          'C B'
+          'C D'
+          'E F'
+          'G G';
+          align-items: start;
+          margin: 4.5rem 6.1rem 5rem;
+          animation: downtop 700ms;
+      }
+    
+      main div:nth-child(1) {
+        grid-area: A;
+      }
+      main div:nth-child(2) {
+        grid-area: B;
+      }
+      main div:nth-child(3) {
+        grid-area: A;
+      }
+      main div:nth-child(4) {
+        grid-area: C;
+      }
+      main div:nth-child(5) {
+        grid-area: D;
+      }
+      main div:nth-child(6) {
+        grid-area: F;
+      }
+      main footer {
+        grid-area: G;
+      }
+
+    
+      .card h2 {
+        display: none;
+       }
+
+      
+
+}
+
+@media (min-width: 1440px) {
+  main {
+    grid-template-areas: 
+    'A B C'
+    'D B E'
+    'D F E'
+    'G G G';
+  }
+
+ main div:nth-child(1) {
+   grid-area: A;
+  }
+ 
+  main div:nth-child(2) {
+   grid-area: B;
+  }
+  
+  main div:nth-child(3) {
+   grid-area: C;
+  }
+  
+  main div:nth-child(4) {
+    grid-area: D;
+  }
+
+  main div:nth-child(5) {
+    grid-area: E;
+   }
+
+   main div:nth-child(6) {
+    grid-area: F;
+   }
+   main footer:nth-child(6){
+    grid-area: G;
+   }
+
+   footer {
+    align-items: center;
+   }
+
+}
